@@ -16,13 +16,13 @@ resource "aws_security_group" "terra_security_group" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["41.239.112.54/32"]
+    cidr_blocks = ["${var.user_ip}"]
   }
   ingress {
     description = "Allow ingres HTTP connections"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["41.239.112.54/32"]
+    cidr_blocks = ["${var.user_ip}"]
   }
 }
